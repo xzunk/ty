@@ -1,5 +1,4 @@
-
-<!DOCTYPE html>
+<html>
 
 <head>
   <title> Ayalaan - Realtime Tamil Unicode Typing and Fonts Converter </title>
@@ -8,7 +7,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta content="True" name="HandheldFriendly">
   <link href="img/favicon.ico" rel="shortcut icon">
- 
+  <link href="https://ayalaan.internetlk.com/" rel="canonical">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -17,7 +16,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Tamil:wght@100..900&family=Outfit:wght@100..900&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/css.css">
- 
+
 </head>
 <body>
 
@@ -92,7 +91,7 @@
       <button type="button" class="btn btn-primary btn-lg btn-block" data-bs-toggle="modal" data-bs-target="#exampleModal">Typing Schema/Help </button> </br> </br>
       <p>This project is maintained by its users. You can also contribute.</p>
       <button type="button" class="btn btn-primary btn-lg btn-block" data-bs-toggle="modal" data-bs-target="#don">☕️ Become a Donor</button> </br> </br>
-      <button  id="googleSignInBtn">Sign in with Google</button>
+    
     </div>
  
   </div>
@@ -784,73 +783,12 @@
     </div>
   </div>
 </div>
-<script src="https://www.gstatic.com/firebasejs/9.20.0/firebase-app.js"></script>
-<script src="https://www.gstatic.com/firebasejs/9.20.0/firebase-auth.js"></script>  
-<script type="module">
-  // Import the functions you need from the SDKs you need
-  import { initializeApp } from "https://www.gstatic.com/firebasejs/10.14.1/firebase-app.js";
-  // TODO: Add SDKs for Firebase products that you want to use
-  // https://firebase.google.com/docs/web/setup#available-libraries
 
-  // Your web app's Firebase configuration
-  const firebaseConfig = {
-    apiKey: "AIzaSyC0tdNDIbKHDjv-v_UId4c33x_g9oj6JZU",
-    authDomain: "tamiltyper.firebaseapp.com",
-    projectId: "tamiltyper",
-    storageBucket: "tamiltyper.appspot.com",
-    messagingSenderId: "795120884361",
-    appId: "1:795120884361:web:c9e84873634e3f412cc458"
-  };
 
-  // Initialize Firebase
-  const app = initializeApp(firebaseConfig);
-</script>
-<script>
-const googleSignInBtn = document.getElementById("googleSignInBtn");
-
-googleSignInBtn.addEventListener("click", (event) => {
-  event.preventDefault();
-
-  const provider = new firebase.auth.GoogleAuthProvider();
-  firebase.auth().signInWithPopup(provider)
-    .then((result) => {
-      // User signed in successfully.
-      const user = result.user;
-      // You can access user information here, e.g., user.displayName, user.email
-    })
-    .catch((error) => {
-      // Handle errors here.
-      console.error(error);
-    });
-});
-</script>
-
-<script>
-const db = firebase.firestore();
-const usersRef = db.collection("users"); 
-</script>
-<script>
-const box1 = document.getElementById("box1");
-box1.addEventListener("input", () => {
-  // Get the user's ID from the Firebase authentication object
-  const userId = firebase.auth().currentUser.uid;
-
-  // Update the user's data in the database
-  usersRef.doc(userId).update({
-    inputData: box1.value
-  })
-    .then(() => {
-      console.log("Data synced successfully");
-    })
-    .catch((error) => {
-      console.error("Error syncing data:", error);
-    });
-});
-</script>
- 
 
   <script src="js/dark.js" defer></script>
   <script src="js/engine.js" defer></script>
+   
 
 
 
@@ -860,6 +798,15 @@ box1.addEventListener("input", () => {
 
 
 
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-PJ9XY29LP9"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-PJ9XY29LP9');
+</script>
 
 
 
@@ -892,7 +839,7 @@ box1.addEventListener("input", () => {
           <label class="form-check-label" for="flexSwitchCheckChecked">Switch To Darkmode/Lightmode <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckChecked" onclick="themeToggle()">  </label> 
        
         </div>
-        <p>&copy; 2024 Designed and built Madusanka  | Made in Sri Lanka 🇱🇰 </p>
+        <p>&copy; 2021-2024 Designed and built the<a href="https://internetlk.com/" target=”_blank”> Internetlk</a>  | Made in Sri Lanka 🇱🇰 </p>
       </div>
     </div>
   </div>
