@@ -786,7 +786,9 @@
   </div>
 </div>
 <script>
-const googleSignInBtn = document.getElementById("googleSignInBtn");
+googleSignInBtn.addEventListener("click", (event) => {
+  event.preventDefault();
+  const googleSignInBtn = document.getElementById("googleSignInBtn");
 googleSignInBtn.addEventListener("click", () => {
   const provider = new firebase.auth.GoogleAuthProvider();
   firebase.auth().signInWithPopup(provider)
@@ -800,6 +802,10 @@ googleSignInBtn.addEventListener("click", () => {
       console.error(error);
     });
 });
+});
+</script>
+<script>
+
 </script>
 <script>
 const db = firebase.firestore();
