@@ -831,13 +831,13 @@
       const userId = firebase.auth().currentUser ? firebase.auth().currentUser.uid : null;
       
       if (userId) {
-          const name = document.getElementById('box1').value;
+          const box1 = document.getElementById('box1').value;
          
 
           // Update Firebase in real-time as user types
           database.ref('users/' + userId).set({
-              name: name,
-              email: email
+              box1: box1,
+             
           })
           .then(() => {
               console.log('Data synced successfully');
